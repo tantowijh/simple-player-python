@@ -73,7 +73,7 @@ class AudioPlayer:
             self.event.set()  # Request termination
     
         
-class simplelayer:
+class simpleplayer:
     def __init__(self, filename, device=None):
         self.AudioPlayer = AudioPlayer(filename, device=None)
     
