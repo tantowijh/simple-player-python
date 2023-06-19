@@ -14,6 +14,13 @@ pip install simpleplayer
 
 <br>
 
+## Terminal Usage
+
+You can also use the module directly from the terminal:
+```
+simpleplayer path/to/your/audio/file.wav
+```
+
 ## Usage
 
 Import the `AudioPlayer` class from the `simpleplayer` module:

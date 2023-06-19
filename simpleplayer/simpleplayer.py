@@ -5,6 +5,7 @@ Module for playing audio files using soundfile and sounddevice.
 import soundfile as sf
 import sounddevice as sd
 import time
+import sys
 
 
 class AudioPlayer:
@@ -65,3 +66,20 @@ class AudioPlayer:
     def wait(self) -> None:
         seconds = int(self.duration)
         time.sleep(seconds)
+
+def main():
+    # Ensure a filename is provided as a command-line argument
+    if len(sys.argv) < 2:
+        print("Please provide the filename of the audio file.")
+        return
+
+    # Extract the filename from command-line arguments
+    filename = sys.argv[1]
+
+    # Create an instance of AudioPlayer and play the audio
+    player = AudioPlayer(filename)
+    player.play()
+    player.wait()
+
+if __name__ == '__main__':
+    main()

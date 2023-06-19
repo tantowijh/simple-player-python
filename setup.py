@@ -6,8 +6,8 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='simpleplayer',
-    version='1.0.2',
-    description='Module for playing audio files using soundfile and sounddevice.',
+    version='1.0.3',
+    description='Discover the pinnacle of audio elegance with this simple-player module, boasting a sophisticated blend of advanced features and seamless compatibility across multiple platforms.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='TOWDIO',
@@ -18,4 +18,10 @@ setup(
         'sounddevice',
         'numpy',
     ],
+    entry_points={
+        'console_scripts': [
+            'simpleplayer = simpleplayer.simpleplayer:main',
+        ],
+    }
+
 )
