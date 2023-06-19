@@ -68,18 +68,27 @@ class AudioPlayer:
         time.sleep(seconds)
 
 def main():
-    # Ensure a filename is provided as a command-line argument
-    if len(sys.argv) < 2:
-        print("Please provide the filename of the audio file.")
-        return
+    try:
+        # Ensure a filename is provided as a command-line argument
+        if len(sys.argv) < 2 or sys.argv[1] == "--help":
+            print("\n"*3)
+            print("Simple Player\n")
+            print("Usage  : simpleplayer <filename>\n")
+            print("Example: simpleplayer 'path/to/file audio.wav'\n")
+            print("         simpleplayer --help   (to show this help message)")
+            print("\n"*3)
+            sys.exit(0)
 
-    # Extract the filename from command-line arguments
-    filename = sys.argv[1]
+        # Extract the filename from command-line arguments
+        filename = sys.argv[1]
 
-    # Create an instance of AudioPlayer and play the audio
-    player = AudioPlayer(filename)
-    player.play()
-    player.wait()
+        # Create an instance of AudioPlayer and play the audio
+        player = AudioPlayer(filename)
+        player.play()
+        player.wait()
+    except KeyboardInterrupt:
+        print("\nInterrupted by user")
+        sys.exit(0)
 
 if __name__ == '__main__':
     main()

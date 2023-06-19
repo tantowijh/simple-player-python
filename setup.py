@@ -6,7 +6,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='simpleplayer',
-    version='1.0.3',
+    version='1.0.4',
     description='Discover the pinnacle of audio elegance with this simple-player module, boasting a sophisticated blend of advanced features and seamless compatibility across multiple platforms.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -17,11 +17,12 @@ setup(
         'soundfile',
         'sounddevice',
         'numpy',
+        'gtts',
     ],
     entry_points={
         'console_scripts': [
             'simpleplayer = simpleplayer.simpleplayer:main',
+            'voicegen = simpleplayer.voicegen:main',
         ],
     }
-
 )

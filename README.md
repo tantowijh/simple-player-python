@@ -106,72 +106,58 @@ Remember to replace 'path/to/your/audio/file.wav' with the actual path to your a
 
 <br>
 
-## Simple Player Example
+## [Simple Player Example](https://raw.githubusercontent.com/tantowijh/simple-player-python/main/example.py)
+
+<br>
+<br>
+
+
+# Voice Generator
+
+The `voicegen` module allows you to convert text to speech and save it as an audio file using the `gtts` library.
+
+To use the `voicegen` module, you need to follow these steps:
+
+1. Import the `voicegen` class from the `voicegen` module:
+
+    ```python
+    from simpleplayer import voicegen
+    ```
+2. Create an instance of the voicegen class, providing the text, filename, and an optional language parameter:
+
+    ```python
+    voicegen(text, filename, lang='en')
+    ```
+    Replace text with the text you want to convert to speech, filename with the desired name of the output audio file, and lang with the language code (default is 'en').
+
+3. If the internet connection is available, the text will be converted into speech and saved as an MP3 file with the specified filename.
+
+<br>
+
+Example usage:
 
 ```python
-import time
-from test import AudioPlayer
+from simpleplayer import voicegen
 
-class AudioMenu:
-    def __init__(self):
-        self.player = None
-
-    def display_menu(self):
-        print("1. Load audio file")
-        print("2. Play audio")
-        print("3. Pause audio")
-        print("4. Resume audio")
-        print("5. Stop audio")
-        print("6. Exit")
-
-    def run(self):
-        while True:
-            self.display_menu()
-            choice = input("Enter your choice: ")
-
-            if choice == "1":
-                filename = input("Enter the audio file path: ")
-                self.player = AudioPlayer(filename)
-                print("Audio file loaded.")
-
-            elif choice == "2":
-                if self.player is not None:
-                    self.player.play()
-                    print("Audio playback started.")
-                else:
-                    print("No audio file loaded.")
-
-            elif choice == "3":
-                if self.player is not None:
-                    self.player.pause()
-                    print("Audio playback paused.")
-                else:
-                    print("No audio file loaded.")
-
-            elif choice == "4":
-                if self.player is not None:
-                    self.player.resume()
-                    print("Audio playback resumed.")
-                else:
-                    print("No audio file loaded.")
-
-            elif choice == "5":
-                if self.player is not None:
-                    self.player.stop()
-                    print("Audio playback stopped.")
-                    self.player = None
-                else:
-                    print("No audio file loaded.")
-
-            elif choice == "6":
-                break
-
-            else:
-                print("Invalid choice. Please try again.")
-
-            time.sleep(1)  # Add a small delay to allow time for audio operations to take effect
-
-# Create an instance of AudioMenu and run the menu
-menu = AudioMenu()
-menu.run()
+# Generate the voice
+voicegen("Hello, world!", "output")
 ```
+This will generate an audio file named output.mp3 containing the speech for the text "Hello, world!".
+
+<br>
+
+## Terminal Usage
+You can also use the voicegen module directly from the terminal:
+```
+voicegen "Hello, world!" output
+```
+
+Replace "Hello, world!" with the desired text and output with the desired filename (without the file extension). The generated audio file will be saved as output.mp3 in the current directory.
+
+Note: Ensure that you have a stable internet connection to use the voicegen module successfully.
+
+<br>
+<br>
+
+# LICENSE
+This project is licensed under the [MIT License](LICENSE) - see the LICENSE file for details.
