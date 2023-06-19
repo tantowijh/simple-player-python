@@ -1,2 +1,2 @@
-from .simpleplayer import AudioPlayer
+from .simpleplayer import simplelayer
 from .voicegen import voicegen

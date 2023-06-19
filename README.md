@@ -23,10 +23,10 @@ simpleplayer path/to/your/audio/file.wav
 
 ## Usage
 
-Import the `AudioPlayer` class from the `simpleplayer` module:
+Import the `simpleplayer` class from the `simpleplayer` module:
 
 ```python
-from simpleplayer import AudioPlayer
+from simpleplayer import simpleplayer
 ```
 
 Create an instance of the AudioPlayer class, providing the filename of the audio file as a parameter:
@@ -80,10 +80,10 @@ player.stop()
 Here's an example that demonstrates the usage of the AudioPlayer module:
     
 ```python
-from simpleplayer import AudioPlayer
+from simpleplayer import simpleplayer
 
 # Create an instance of AudioPlayer
-player = AudioPlayer('path/to/your/audio/file.wav')
+player = simpleplayer('path/to/your/audio/file.wav')
 
 # Start playing the audio
 player.play()

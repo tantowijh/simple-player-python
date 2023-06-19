@@ -1,5 +1,6 @@
 import sys
 import socket
+import argparse
 from gtts import gTTS
 
 
@@ -23,21 +24,33 @@ class voicegen:
             return False
 
 def main():
+    parser = argparse.ArgumentParser(
+        description="Voice Generator",
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+    parser.add_argument(
+        "text",
+        metavar="TEXT",
+        help="text to convert to speech"
+    )
+    parser.add_argument(
+        "filename",
+        metavar="FILENAME",
+        help="name of the speech file"
+    )
+    parser.add_argument(
+        "--lang",
+        metavar="LANG",
+        default="en",
+        help="language for the speech (default: en)"
+    )
+
+    args = parser.parse_args()
+
     try:
-        if len(sys.argv) < 3 or sys.argv[1] == '--help':
-            print("\n"*3)
-            print('Voice Generator\n')
-            print('Usage  : voicegen <text> <filename> optional [lang]\n')
-            print('Example: voicegen "Text to speech" "speach name" "id"\n')
-            print('         voicegen --help (to show this help message)')
-            print("\n"*3)
-            sys.exit(0)
-        text = sys.argv[1]
-        filename = sys.argv[2]
-        lang = sys.argv[3] if len(sys.argv) >= 4 else 'en'
-        voicegen(text, filename, lang)
+        voicegen(args.text, args.filename, args.lang)
     except KeyboardInterrupt:
-        print('\nInterrupted by user')
+        print("\nInterrupted by user")
         sys.exit(0)
 
 if __name__ == "__main__":

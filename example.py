@@ -1,5 +1,5 @@
 import time
-from test import AudioPlayer
+from simpleplayer import simpleplayer
 
 class AudioMenu:
     def __init__(self):
@@ -20,7 +20,7 @@ class AudioMenu:
 
             if choice == "1":
                 filename = input("Enter the audio file path: ")
-                self.player = AudioPlayer(filename)
+                self.player = simpleplayer(filename)
                 print("Audio file loaded.")
 
             elif choice == "2":
