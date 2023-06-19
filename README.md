@@ -1,6 +1,6 @@
 # Simple Player
 
-The `AudioPlayer` module allows you to play audio files using the `soundfile` and `sounddevice` libraries.
+Discover the pinnacle of audio elegance with this `simpleplayer` module, boasting a sophisticated blend of advanced features and seamless compatibility across multiple platforms.
 
 <br>
 
