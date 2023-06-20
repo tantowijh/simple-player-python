@@ -32,7 +32,7 @@ from simpleplayer import simpleplayer
 Create an instance of the AudioPlayer class, providing the filename of the audio file as a parameter:
 
 ```python
-player = AudioPlayer('path/to/your/audio/file.wav')
+player = simpleplayer('path/to/your/audio/file.wav')
 ```
 
 Replace 'path/to/your/audio/file.wav' with the actual path to your audio file.

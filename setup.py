@@ -6,11 +6,11 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='simpleplayer',
-    version='0.0.1',
+    version='0.0.2',
     description='Discover the pinnacle of audio elegance with this simple-player module, boasting a sophisticated blend of advanced features and seamless compatibility across multiple platforms.',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    author='TOWDIO',
+    author='Thowie Studio',
     author_email='thowiestudio@gmail.com',
     packages=['simpleplayer'],
     install_requires=[
@@ -21,7 +21,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'simpleplayer = simpleplayer.simpleplayer:main',
+            'simpleplayer = simpleplayer.longplayer:main',
             'voicegen = simpleplayer.voicegen:main',
         ],
     },
